@@ -95,39 +95,8 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	
-  // DECAY THEME
-  //#ifdef THEME_DECAY
-  /* 8 normal colors */
-  //[0] = "#2D3130",
- // [1] = "#e88693",
- // [2] = "#4FDAD1",
-  //[3] = "#ecd3a0",
-  //[4] = "#97b1e2",
- /// [5] = "#caabe6",
- /// [6] = "#93cee9",
- // [7] = "#cbced3",
-
-  /* 8 bright colors */
-  //[8] = "#2f3434",
-  //[9] = "#e88693",
-  //[10] = "#4FDAD1",
-  //[11] = "#ecd3a0",
-  //[12] = "#97b1e2",
-  //[13] = "#caabe6",
- /// [14] = "#98d3ee",
-  //[15] = "#B1CCC9",
-
-  //[255] = 0,
-
-  //[256] = "#191C1C",
-  //[257] = "#B1CCC9",
-
-  //#endif
-
-  //#ifdef THEME_DEFAULT
-  /* 8 normal colors */
-	"black",
+	/* 8 normal colors */
+  "black",
 	"red3",
 	"green3",
 	"yellow3",
@@ -171,7 +140,7 @@ static unsigned int defaultrcs = 257;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")<F2>
+ * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 6;
 
@@ -208,6 +177,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
+	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
+	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
